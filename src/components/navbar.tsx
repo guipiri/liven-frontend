@@ -10,12 +10,12 @@ export default function NavBar() {
   return (
     <div className="h-48 flex justify-center items-center shadow-lg px-20">
       <h1 className="text-5xl text-center mx-auto">Xuxa's Store</h1>
-      <button className="flex items-center justify-center">
+      <a href="/cart" className="flex items-center justify-center">
         <FaCartShopping size={32} className="justify-end" />
         <span className="bg-green-800 size-6 text-white font-bold flex items-center justify-center rounded-[100%] relative bottom-4">
           {prodQty ? prodQty : 0}
         </span>
-      </button>
+      </a>
     </div>
   )
 }
