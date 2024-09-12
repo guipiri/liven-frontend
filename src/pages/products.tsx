@@ -7,13 +7,13 @@ import { Product } from '../types/products'
 
 export default function ProductsPage() {
   const [products, setProducts] = useState<Product[] | null>(null)
-  const { cart, addToCart } = useContext(CartContext)
+  const { addToCart } = useContext(CartContext)
 
   const getProductsList = useCallback(async () => {
     const products = await getAllProducts()
     if (products) setProducts(products)
   }, [])
-  console.log(cart)
+
   useEffect(() => {
     getProductsList()
   }, [getProductsList])
