@@ -6,7 +6,6 @@ import { CartContext } from '../contexts/cart-provider'
 export default function Cart() {
   const { cart, addToCart, removeOneFromCart, removeFromCart } =
     useContext(CartContext)
-  console.log(cart)
 
   return (
     <div className="flex items-center flex-col px-6 py-10">

@@ -8,7 +8,6 @@ export default function NavBar() {
   const prodQty = cart?.reduce((prev, curr) => {
     return prev + curr.qty
   }, 0)
-  console.log(cart)
 
   return (
     <div className="h-48 flex justify-center items-center shadow-lg px-6 sm:px-20">
