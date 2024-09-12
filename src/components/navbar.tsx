@@ -11,7 +11,7 @@ export default function NavBar() {
   console.log(cart)
 
   return (
-    <div className="h-48 flex justify-center items-center shadow-lg px-20">
+    <div className="h-48 flex justify-center items-center shadow-lg px-6 sm:px-20">
       <NavLink
         to="/"
         className="text-5xl text-center mx-auto hover:text-green-800 transition-all"
