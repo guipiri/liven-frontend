@@ -1,6 +1,6 @@
-import { Product } from './products'
+import { Product } from './product'
 
-export interface ProductInCart extends Pick<Product, 'id'> {
+export interface ProductInCart extends Product {
   qty: number
 }
 

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Product } from '../../types/products'
+import { Product } from '../../types/product'
 import { BASE_URL, PRODUCTS } from './endpoints'
 
 export const getAllProducts = async () => {

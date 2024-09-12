@@ -1,11 +1,12 @@
 import { createContext, ReactNode, useState } from 'react'
 import { Cart } from '../types/cart'
+import { Product } from '../types/product'
 
 export const CartContext = createContext<{
   cart: Cart | null
-  addToCart: (productId: number) => void
-  removeFromCart: (productId: number) => void
-  removeOneFromCart: (productId: number) => void
+  addToCart: (product: Product) => void
+  removeFromCart: (product: Product) => void
+  removeOneFromCart: (product: Product) => void
 }>({
   cart: null,
   addToCart: () => {},
@@ -16,28 +17,28 @@ export const CartContext = createContext<{
 export default function CartProvider({ children }: { children: ReactNode }) {
   const [cart, setCart] = useState<Cart | null>(null)
 
-  const addToCart = (productId: number) => {
-    if (!cart) return setCart([{ id: productId, qty: 1 }])
-    const isProdIncart = cart.find((prod) => prod.id === productId)
-    if (!isProdIncart) return setCart([...cart, { id: productId, qty: 1 }])
-      
+  const addToCart = (product: Product) => {
+    if (!cart) return setCart([{ ...product, qty: 1 }])
+    const isProdIncart = cart.find((prod) => prod.id === product.id)
+    if (!isProdIncart) return setCart([...cart, { ...product, qty: 1 }])
+
     const newCart = cart.map((prod) => {
-      return prod.id === productId ? { ...prod, qty: prod.qty + 1 } : prod
+      return prod.id === product.id ? { ...prod, qty: prod.qty + 1 } : prod
     })
     setCart(newCart)
   }
-  const removeFromCart = (productId: number) => {
+  const removeFromCart = (product: Product) => {
     if (!cart) return
     const newCart = cart.filter((prod) => {
-      return prod.id !== productId
+      return prod.id !== product.id
     })
     setCart(newCart)
   }
 
-  const removeOneFromCart = (productId: number) => {
+  const removeOneFromCart = (product: Product) => {
     if (!cart) return
     const newCart = cart.map((prod) => {
-      return prod.id === productId ? { ...prod, qty: prod.qty - 1 } : prod
+      return prod.id === product.id ? { ...prod, qty: prod.qty - 1 } : prod
     })
     setCart(newCart)
   }

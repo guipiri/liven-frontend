@@ -3,7 +3,7 @@ import { FaCartShopping } from 'react-icons/fa6'
 import { IoIosStar } from 'react-icons/io'
 import { CartContext } from '../contexts/cart-provider'
 import { getAllProducts } from '../services/fakestore/getAllProducts'
-import { Product } from '../types/products'
+import { Product } from '../types/product'
 
 export default function ProductsPage() {
   const [products, setProducts] = useState<Product[] | null>(null)
@@ -45,7 +45,7 @@ export default function ProductsPage() {
                   R$ {prod.price.toPrecision(4).replace('.', ',')}
                 </span>
                 <button
-                  onClick={() => addToCart(prod.id)}
+                  onClick={() => addToCart(prod)}
                   className="flex items-center justify-center shadow-md bg-green-100 p-2 px-4 rounded-xl text-gray-600 hover:text-black hover:bg-green-200 transition-all"
                 >
                   Carrinho
