@@ -9,15 +9,15 @@ const router = createBrowserRouter([
     path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
-    loader: false,
     children: [
       {
-        path: '/',
         element: <ProductsPage />,
+        index: true,
       },
       {
-        path: 'cart',
+        path: '/cart',
         element: <Cart />,
+        index: true,
       },
     ],
   },
