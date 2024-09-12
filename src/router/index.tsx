@@ -1,30 +1,30 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "../App";
-import Cart from "../pages/cart";
-import ErrorPage from "../pages/error-page";
-import Products from "../pages/products";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import App from '../App'
+import Cart from '../pages/cart'
+import ErrorPage from '../pages/error-page'
+import ProductsPage from '../pages/products'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
     loader: false,
     children: [
       {
-        path: "/",
-        element: <Products />,
+        path: '/',
+        element: <ProductsPage />,
       },
       {
-        path: "cart",
+        path: 'cart',
         element: <Cart />,
       },
     ],
   },
-]);
+])
 
 function Router() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />
 }
 
-export default Router;
+export default Router

@@ -1,7 +1,12 @@
-import RootLayout from "./layout/root";
+import CartProvider from './contexts/cart-provider'
+import RootLayout from './layout/root'
 
 function App() {
-  return <RootLayout />;
+  return (
+    <CartProvider>
+      <RootLayout />
+    </CartProvider>
+  )
 }
 
-export default App;
+export default App
