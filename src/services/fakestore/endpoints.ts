@@ -1,3 +1,3 @@
-export const BASE_URL = "https://fakestoreapi.com/products";
+export const BASE_URL = 'https://fakestoreapi.com'
 
-export const PRODUCTS = "/products";
+export const PRODUCTS = '/products'

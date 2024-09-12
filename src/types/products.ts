@@ -6,15 +6,16 @@ enum Categories {
 }
 
 export interface Rating {
-  rate: number;
-  count: number;
+  rate: number
+  count: number
 }
 
-export interface Products {
-  id: number;
-  title: string;
-  category: Categories;
-  description: string;
-  image: string;
-  rating: Rating;
+export interface Product {
+  id: number
+  title: string
+  price: number
+  category: Categories
+  description: string
+  image: string
+  rating: Rating
 }
