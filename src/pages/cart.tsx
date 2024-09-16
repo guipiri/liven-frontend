@@ -13,7 +13,7 @@ export default function Cart() {
         <p className="mb-10">Ainda não há produtos no seu carrinho!</p>
       )}
       {cart?.map((prod) => {
-        if (prod.qty === 0) return
+        if (prod.qty === 0) return <></>
         return (
           <div
             key={prod.id}
