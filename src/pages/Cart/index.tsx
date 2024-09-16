@@ -12,7 +12,7 @@ export default function Cart() {
       )}
       {cart?.map((prod) => {
         if (prod.qty === 0) return <></>
-        return <ProductCart prod={prod} />
+        return <ProductCart key={prod.id} prod={prod} />
       })}
       <h2 className="text-2xl font-bold flex justify-between w-full max-w-xl">
         <span className="">Total: </span>

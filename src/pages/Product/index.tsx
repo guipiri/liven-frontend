@@ -19,7 +19,7 @@ export default function ProductsPage() {
     <div className="flex justify-center">
       <div className="flex flex-wrap max-w-4xl justify-evenly">
         {products?.map((prod) => {
-          return <ProductComponent prod={prod} />
+          return <ProductComponent key={prod.id} prod={prod} />
         })}
       </div>
     </div>

@@ -7,10 +7,7 @@ import { Product } from '../../types/product'
 export default function ProductComponent({ prod }: { prod: Product }) {
   const { addToCart } = useContext(CartContext)
   return (
-    <div
-      key={prod.id}
-      className="shadow-lg w-80 rounded-xl my-10 flex flex-col items-center"
-    >
+    <div className="shadow-lg w-80 rounded-xl my-10 flex flex-col items-center">
       <div className="size-48">
         <img
           className="size-48 object-contain"
