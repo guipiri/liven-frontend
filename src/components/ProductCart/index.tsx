@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import { FaMinusSquare, FaPlusSquare } from 'react-icons/fa'
 import { IoClose } from 'react-icons/io5'
-import { CartContext } from '../contexts/cart-provider'
-import { ProductInCart } from '../types/cart'
+import { CartContext } from '../../contexts/CartProvider'
+import { ProductInCart } from '../../types/cart'
 
 export default function ProductCart({ prod }: { prod: ProductInCart }) {
   const { addToCart, removeOneFromCart, removeFromCart } =

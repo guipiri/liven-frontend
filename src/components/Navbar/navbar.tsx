@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { FaCartShopping } from 'react-icons/fa6'
 import { NavLink } from 'react-router-dom'
-import { CartContext } from '../contexts/cart-provider'
+import { CartContext } from '../../contexts/CartProvider'
 
 export default function NavBar() {
   const { cart } = useContext(CartContext)

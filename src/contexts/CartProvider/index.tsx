@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useState } from 'react'
-import { Cart } from '../types/cart'
-import { Product } from '../types/product'
+import { Cart } from '../../types/cart'
+import { Product } from '../../types/product'
 
 export const CartContext = createContext<{
   cart: Cart | null

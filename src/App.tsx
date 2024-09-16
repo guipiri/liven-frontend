@@ -1,4 +1,4 @@
-import CartProvider from './contexts/cart-provider'
+import CartProvider from './contexts/CartProvider'
 import RootLayout from './layout/root'
 
 function App() {
