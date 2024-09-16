@@ -9,13 +9,16 @@ export default function Cart() {
 
   return (
     <div className="flex items-center flex-col px-6 py-10">
-      {cart?.length === 0 && (
+      {(cart?.length === 0 || !cart) && (
         <p className="mb-10">Ainda não há produtos no seu carrinho!</p>
       )}
       {cart?.map((prod) => {
         if (prod.qty === 0) return
         return (
-          <div className="flex h-48 sm:h-60 w-full max-w-xl items-center border-b mb-4">
+          <div
+            key={prod.id}
+            className="flex h-48 sm:h-60 w-full max-w-xl items-center border-b mb-4"
+          >
             <span className="relative bottom-24 right-0 hover:cursor-pointer">
               <IoClose
                 onClick={() => {
@@ -35,7 +38,10 @@ export default function Cart() {
               <h2 className="text-lg font-bold truncate">{prod.title}</h2>
               <div className="flex justify-between">
                 <p className="text-lg">
-                  R$ {prod.price.toFixed(2).replace('.', ',')}
+                  {prod.price.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
                 </p>
                 <div className="flex items-center text-xl w-16 justify-between self-center">
                   <span>
@@ -58,7 +64,10 @@ export default function Cart() {
                 </div>
               </div>
               <span className="text-2xl text-end">
-                R$ {(prod.qty * prod.price).toFixed(2).replace('.', ',')}
+                {(prod.qty * prod.price).toLocaleString('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
               </span>
             </div>
           </div>
@@ -66,15 +75,13 @@ export default function Cart() {
       })}
       <h2 className="text-2xl font-bold flex justify-between w-full max-w-xl">
         <span className="">Total: </span>
-        R${' '}
         {!cart
           ? '0,00'
           : cart
               .reduce((prev, curr) => {
                 return curr.qty * curr.price + prev
               }, 0)
-              .toFixed(2)
-              .replace('.', ',')}
+              .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
       </h2>
     </div>
   )

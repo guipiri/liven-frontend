@@ -42,7 +42,11 @@ export default function ProductsPage() {
               </div>
               <div className="w-[90%] flex justify-between items-center mb-8">
                 <span className="text-2xl">
-                  R$ {prod.price.toPrecision(4).replace('.', ',')}
+                  R${' '}
+                  {prod.price.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
                 </span>
                 <button
                   onClick={() => addToCart(prod)}
